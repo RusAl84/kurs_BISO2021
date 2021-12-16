@@ -57,6 +57,7 @@ namespace ClientWF
       mes.userName = textBox1.Text;
       mes.messageText = textBox2.Text;
       mes.timeStamp = DateTime.Now.ToString();
+            mes.token = token;
       request.AddBody(mes);
       client.Execute(request);
     }
