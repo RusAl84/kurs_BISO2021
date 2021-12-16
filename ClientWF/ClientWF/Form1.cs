@@ -140,5 +140,37 @@ namespace ClientWF
             }
             
         }
+
+        private void checkBox1_CheckStateChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            //if (checkBox1.Checked)
+            //{
+            //    MessageBox.Show("Bla");
+            //}
+
+
+        }
+
+        private void checkBox1_CheckStateChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                this.BackColor = Color.Black;
+            }
+            else
+            {
+                this.BackColor = Color.White;
+            }
+        }
     }
 }
