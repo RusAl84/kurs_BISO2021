@@ -17,6 +17,12 @@ namespace ClassLib
         {
             LoginsFileName = _loginsFileName;
         }
+        /// <summary>
+        /// Добавление новых логинов и паролей в файл
+        /// </summary>
+        /// <param name="lg"></param>
+        /// <param name="token"></param>
+        /// <returns></returns>
         public bool AddUser(LoginClass lg, out string token)
         {
             bool existUser = false;
@@ -56,8 +62,15 @@ namespace ClassLib
             }
             return "";
         }
+        /// <summary>
+        /// Регистрация нового пользователя
+        /// </summary>
+        /// <param name="_login"></param>
+        /// <param name="_password"></param>
+        /// <returns></returns>
         public string RegUser(string _login, string _password)
         {
+
             LoginClass lg = new LoginClass(_login.ToLower(),
                                             _password);  //! уже в SHA256
             if (AddUser(lg, out string token))
@@ -78,6 +91,9 @@ namespace ClassLib
             }
             return "";
         }
+        /// <summary>
+        /// Функция загружает логины и пароли из файла
+        /// </summary>
         public void LoadLogins()
         {
             if (File.Exists(LoginsFileName))
@@ -86,11 +102,19 @@ namespace ClassLib
                 this.ListOfLogins = JsonConvert.DeserializeObject<List<LoginClass>>(restoredJsonString);
             }
         }
+        /// <summary>
+        /// Функция сохраняет логины и пароли в файл
+        /// </summary>
         public void SaveLogins()
         {
             string jsonString = JsonConvert.SerializeObject(ListOfLogins, Formatting.Indented);
             File.WriteAllText(LoginsFileName, jsonString);
         }
+        /// <summary>
+        /// Обновить токен
+        /// </summary>
+        /// <param name="oldToken"></param>
+        /// <returns></returns>
         public string refreshToken(string oldToken)
         {
             LoginClass lg = new LoginClass();
@@ -100,6 +124,10 @@ namespace ClassLib
             else
                 return "";
         }
+        /// <summary>
+        /// Вывод логинов и паролей на экран
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             string str1 = "";
