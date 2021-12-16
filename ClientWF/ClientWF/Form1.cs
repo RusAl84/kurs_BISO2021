@@ -57,7 +57,7 @@ namespace ClientWF
       mes.userName = textBox1.Text;
       mes.messageText = textBox2.Text;
       mes.timeStamp = DateTime.Now.ToString();
-            mes.token = token;
+      mes.token = token;
       request.AddBody(mes);
       client.Execute(request);
     }
@@ -129,6 +129,16 @@ namespace ClientWF
             {
                 strdata = streamReader.ReadToEnd();
             }
+        }
+
+        private void listBox1_DoubleClick(object sender, EventArgs e)
+        {
+            int index = listBox1.SelectedIndex;
+            if (index > 0)
+            {
+                textBox2.Text= "цитата: ^"+listBox1.Items[index].ToString()+"^";
+            }
+            
         }
     }
 }
