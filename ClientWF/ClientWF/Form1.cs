@@ -10,6 +10,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,22 +27,45 @@ namespace ClientWF
       InitializeComponent();
     }
 
+
+    private bool check_allow_server(string ip, int port)
+        {
+            Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            IPEndPoint point = new IPEndPoint(IPAddress.Parse(ip), port);
+            try
+            {
+                socket.Connect(point);
+                return true;
+            }
+            catch (SocketException e)
+            {
+                if (e.ErrorCode == 10061)
+                    return false;
+                else 
+                if (e.ErrorCode == 10060)
+                    return false;
+                //    Console.WriteLine("TimeOut"); 
+                else
+                    return false;
+                //Console.WriteLine(e.Message);
+            }
+            return false;
+
+        }
+
     private void button2_Click(object sender, EventArgs e)
     {
 
     }
-
         private string  drawEmoji(string str1)
         {
             int i = 0;
             string str2 = "";
             while(i<str1.Length)
             {
-                
                 if (str1[i] == '\\') 
                 {
                     string tmp = "\\";
-
                     int j = i + 1;
                     while ((j < str1.Length) && (str1[j] != ' '))
                     {
@@ -67,22 +91,21 @@ namespace ClientWF
     private void timer1_Tick(object sender, EventArgs e)
     {
       string res = "";
-      while (res != "Not found")
-      {
-        var client = new RestClient(baseUrl);
-        var request = new RestRequest("api/GetMessage/" + pos, Method.GET);
-        var queryResult = client.Execute(request);
-        res = queryResult.Content;
-        res = res.Trim('\"');
-        if (res != "Not found")
-        {
-            res= drawEmoji(res);
-
-
-          listBox1.Items.Add(res);
-          pos++;
-        }
-      }
+      if (check_allow_server("127.0.0.1",5000))
+          while (res != "Not found")
+          {
+            var client = new RestClient(baseUrl);
+            var request = new RestRequest("api/GetMessage/" + pos, Method.GET);
+            var queryResult = client.Execute(request);
+            res = queryResult.Content;
+            res = res.Trim('\"');
+            if (res != "Not found")
+            {
+              res= drawEmoji(res);
+              listBox1.Items.Add(res);
+              pos++;
+            }
+          }
     }
 
     private void button1_Click(object sender, EventArgs e)
@@ -215,6 +238,11 @@ namespace ClientWF
             //listBox1.Items.Add("😃😍✌✌😂😂");
             //string unicodeString = "\u1F642";
             //listBox1.Items.Add(unicodeString);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
