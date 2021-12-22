@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -30,6 +31,39 @@ namespace ClientWF
 
     }
 
+        private string  drawEmoji(string str1)
+        {
+            int i = 0;
+            string str2 = "";
+            while(i<str1.Length)
+            {
+                
+                if (str1[i] == '\\') 
+                {
+                    string tmp = "\\";
+
+                    int j = i + 1;
+                    while ((j < str1.Length) && (str1[j] != ' '))
+                    {
+                        tmp += str1[j];
+                        j++;
+                    }
+                    tmp = tmp.Replace("\\u", "");
+                    var personWithBlondHair = ""
+                        + (char)int.Parse(tmp.Substring(0, 4), NumberStyles.HexNumber)
+                        + (char)int.Parse(tmp.Substring(4, 4), NumberStyles.HexNumber);
+
+                    str2 += personWithBlondHair;
+                    i = j;
+                }
+                else
+                {
+                    str2 += str1[i];
+                }
+                i++;    
+            }
+            return str2;
+        }
     private void timer1_Tick(object sender, EventArgs e)
     {
       string res = "";
@@ -42,6 +76,9 @@ namespace ClientWF
         res = res.Trim('\"');
         if (res != "Not found")
         {
+            res= drawEmoji(res);
+
+
           listBox1.Items.Add(res);
           pos++;
         }
@@ -61,8 +98,6 @@ namespace ClientWF
       request.AddBody(mes);
       client.Execute(request);
     }
-
-
         private void button2_Click_1(object sender, EventArgs e)
         {
             string url = baseUrl + "/api/login";
@@ -103,9 +138,7 @@ namespace ClientWF
             {
                 strdata2 = streamReader.ReadToEnd();
             }
-
             textBox1.Text = strdata2;
-
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -171,6 +204,17 @@ namespace ClientWF
             {
                 this.BackColor = Color.White;
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            textBox2.Text+= "👍";
+            //Image image = Image.FromFile(@"d:\ico\1.png");
+
+            ////Устанавливаешь ей свойство Source: image.Source=...
+            //listBox1.Items.Add("😃😍✌✌😂😂");
+            //string unicodeString = "\u1F642";
+            //listBox1.Items.Add(unicodeString);
         }
     }
 }

@@ -40,6 +40,9 @@ namespace ClientWF
             this.passwordTB = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -54,6 +57,7 @@ namespace ClientWF
             // 
             // listBox1
             // 
+            this.listBox1.Font = new System.Drawing.Font("Noto Sans Cond", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 20;
             this.listBox1.Location = new System.Drawing.Point(12, 12);
@@ -71,9 +75,10 @@ namespace ClientWF
             // 
             // textBox2
             // 
+            this.textBox2.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox2.Location = new System.Drawing.Point(12, 409);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(668, 27);
+            this.textBox2.Size = new System.Drawing.Size(668, 25);
             this.textBox2.TabIndex = 4;
             this.textBox2.Text = "Развития и сил Вам ребята;)";
             // 
@@ -131,11 +136,42 @@ namespace ClientWF
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged_1);
             this.checkBox1.CheckStateChanged += new System.EventHandler(this.checkBox1_CheckStateChanged_1);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(210, 450);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(31, 29);
+            this.button4.TabIndex = 10;
+            this.button4.Text = "👍";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(247, 450);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(31, 29);
+            this.button5.TabIndex = 11;
+            this.button5.Text = "😂";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(284, 450);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(31, 29);
+            this.button6.TabIndex = 12;
+            this.button6.Text = "😊";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 607);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.passwordTB);
@@ -164,6 +200,9 @@ namespace ClientWF
         private System.Windows.Forms.TextBox passwordTB;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }
 
