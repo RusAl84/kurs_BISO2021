@@ -43,15 +43,23 @@ namespace ClientWF
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(686, 369);
+            this.button1.Location = new System.Drawing.Point(703, 386);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 29);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "Отправить";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -62,21 +70,21 @@ namespace ClientWF
             this.listBox1.ItemHeight = 20;
             this.listBox1.Location = new System.Drawing.Point(12, 12);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(768, 344);
+            this.listBox1.Size = new System.Drawing.Size(785, 344);
             this.listBox1.TabIndex = 2;
             this.listBox1.DoubleClick += new System.EventHandler(this.listBox1_DoubleClick);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(13, 363);
+            this.textBox1.Location = new System.Drawing.Point(126, 623);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(403, 27);
+            this.textBox1.Size = new System.Drawing.Size(163, 27);
             this.textBox1.TabIndex = 3;
             // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(12, 409);
+            this.textBox2.Location = new System.Drawing.Point(16, 390);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(668, 25);
             this.textBox2.TabIndex = 4;
@@ -90,17 +98,17 @@ namespace ClientWF
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(240, 566);
+            this.button2.Location = new System.Drawing.Point(250, 91);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 29);
+            this.button2.Size = new System.Drawing.Size(128, 29);
             this.button2.TabIndex = 5;
-            this.button2.Text = "Login";
+            this.button2.Text = "Войти";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // loginTB
             // 
-            this.loginTB.Location = new System.Drawing.Point(20, 521);
+            this.loginTB.Location = new System.Drawing.Point(3, 33);
             this.loginTB.Name = "loginTB";
             this.loginTB.Size = new System.Drawing.Size(192, 27);
             this.loginTB.TabIndex = 6;
@@ -108,7 +116,7 @@ namespace ClientWF
             // 
             // passwordTB
             // 
-            this.passwordTB.Location = new System.Drawing.Point(20, 568);
+            this.passwordTB.Location = new System.Drawing.Point(3, 93);
             this.passwordTB.Name = "passwordTB";
             this.passwordTB.Size = new System.Drawing.Size(192, 27);
             this.passwordTB.TabIndex = 7;
@@ -116,29 +124,29 @@ namespace ClientWF
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(240, 520);
+            this.button3.Location = new System.Drawing.Point(256, 33);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(122, 29);
             this.button3.TabIndex = 8;
-            this.button3.Text = "Registration";
+            this.button3.Text = "Регистрация";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(597, 566);
+            this.checkBox1.Location = new System.Drawing.Point(146, 430);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(101, 24);
+            this.checkBox1.Size = new System.Drawing.Size(120, 24);
             this.checkBox1.TabIndex = 9;
-            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.Text = "Темная тема";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged_1);
             this.checkBox1.CheckStateChanged += new System.EventHandler(this.checkBox1_CheckStateChanged_1);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(210, 450);
+            this.button4.Location = new System.Drawing.Point(8, 6);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(31, 29);
             this.button4.TabIndex = 10;
@@ -148,7 +156,7 @@ namespace ClientWF
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(247, 450);
+            this.button5.Location = new System.Drawing.Point(45, 6);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(31, 29);
             this.button5.TabIndex = 11;
@@ -157,33 +165,92 @@ namespace ClientWF
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(284, 450);
+            this.button6.Location = new System.Drawing.Point(82, 6);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(31, 29);
             this.button6.TabIndex = 12;
             this.button6.Text = "😊";
             this.button6.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.loginTB);
+            this.panel1.Controls.Add(this.passwordTB);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Location = new System.Drawing.Point(13, 474);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(396, 143);
+            this.panel1.TabIndex = 13;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 20);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Логин";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 20);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Пароль";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 364);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(132, 20);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Текст сообщения:";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.button4);
+            this.panel2.Controls.Add(this.button5);
+            this.panel2.Controls.Add(this.button6);
+            this.panel2.Location = new System.Drawing.Point(13, 421);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(127, 41);
+            this.panel2.TabIndex = 15;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 626);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(108, 20);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Вы вошли как:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(799, 607);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.ClientSize = new System.Drawing.Size(809, 658);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.passwordTB);
-            this.Controls.Add(this.loginTB);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Messenger";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,6 +271,12 @@ namespace ClientWF
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label4;
     }
 }
 
