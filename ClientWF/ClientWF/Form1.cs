@@ -22,6 +22,7 @@ namespace ClientWF
     public int pos = 0;
     public string baseUrl = "http://localhost:5000";
     public string token;
+    public List<string> contacts = new List<string>();
     public Form1()
     {
       InitializeComponent();
@@ -91,7 +92,10 @@ namespace ClientWF
     private void timer1_Tick(object sender, EventArgs e)
     {
       string res = "";
-      if (check_allow_server("127.0.0.1",5000))
+      if (check_allow_server("127.0.0.1", 5000))
+            {
+
+           // обновление сообщений 
           while (res != "Not found")
           {
             var client = new RestClient(baseUrl);
@@ -106,7 +110,24 @@ namespace ClientWF
               pos++;
             }
           }
-    }
+                // обновление контактов
+                var client_c = new RestClient(baseUrl);
+                var request_c = new RestRequest("api/contacts/", Method.GET);
+                var queryResult_c = client_c.Execute(request_c);
+                res = queryResult_c.Content;
+                res = res.Trim('\"');
+                res = res.Replace("\\","");
+                List<string> newcontacts = new List<string>();
+                newcontacts = JsonConvert.DeserializeObject<List<string>>(res);
+                if (newcontacts != contacts) 
+                { 
+                    contacts = newcontacts;
+                    listBox2.Items.Clear();
+                    foreach (var contact in newcontacts)
+                         listBox2.Items.Add(contact);
+                }
+            }
+  }
 
     private void button1_Click(object sender, EventArgs e)
     {
@@ -232,17 +253,25 @@ namespace ClientWF
         private void button4_Click(object sender, EventArgs e)
         {
             textBox2.Text+= "👍";
-            //Image image = Image.FromFile(@"d:\ico\1.png");
-
-            ////Устанавливаешь ей свойство Source: image.Source=...
-            //listBox1.Items.Add("😃😍✌✌😂😂");
-            //string unicodeString = "\u1F642";
-            //listBox1.Items.Add(unicodeString);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox2_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int ind = listBox2.SelectedIndex;
+            if (ind >= 0)
+            {
+                textBox2.Text ="@" + contacts[ind] + ":";
+            }
         }
     }
 }

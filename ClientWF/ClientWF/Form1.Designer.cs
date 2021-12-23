@@ -44,13 +44,17 @@ namespace ClientWF
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -185,15 +189,6 @@ namespace ClientWF
             this.panel1.Size = new System.Drawing.Size(396, 143);
             this.panel1.TabIndex = 13;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 20);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Логин";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -202,6 +197,15 @@ namespace ClientWF
             this.label2.Size = new System.Drawing.Size(62, 20);
             this.label2.TabIndex = 10;
             this.label2.Text = "Пароль";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 20);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Логин";
             // 
             // label3
             // 
@@ -231,11 +235,41 @@ namespace ClientWF
             this.label4.TabIndex = 16;
             this.label4.Text = "Вы вошли как:";
             // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 20;
+            this.listBox2.Location = new System.Drawing.Point(14, 33);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(204, 104);
+            this.listBox2.TabIndex = 17;
+            this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
+            this.listBox2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBox2_MouseDoubleClick);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.listBox2);
+            this.panel3.Location = new System.Drawing.Point(424, 474);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(228, 143);
+            this.panel3.TabIndex = 18;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(11, 7);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(135, 20);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Список контактов:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(809, 658);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label3);
@@ -251,6 +285,8 @@ namespace ClientWF
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,6 +313,9 @@ namespace ClientWF
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label5;
     }
 }
 

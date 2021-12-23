@@ -124,6 +124,15 @@ namespace ClassLib
             else
                 return "";
         }
+        public List<String> GetContacts()
+        {
+            List<String> contacts = new List<String>();
+            foreach (LoginClass item in ListOfLogins)
+            {
+                contacts.Add(item.login);
+            }
+            return contacts;
+        }
         /// <summary>
         /// Вывод логинов и паролей на экран
         /// </summary>
@@ -135,6 +144,8 @@ namespace ClassLib
                 str1 += "\n" + item;
             return str1;
         }
+       
+        
         
     }
 }
